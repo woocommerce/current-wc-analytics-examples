@@ -1,0 +1,12 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "extension/wc-analytics-products-example",
+	"version": "0.1.0",
+	"title": "Wc Analytics Products Example",
+	"category": "widgets",
+	"textdomain": "wc-analytics-products-example",
+	"editorScript": "file:./build/index.js",
+	"editorStyle": "file:./build/index.css",
+	"style": "file:./build/style-index.css"
+}
