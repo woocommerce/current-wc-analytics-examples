@@ -14,6 +14,27 @@ class Setup {
 	public function __construct() {
 		add_action( 'admin_enqueue_scripts', array( $this, 'register_scripts' ) );
 		add_action( 'admin_menu', array( $this, 'register_page' ) );
+		add_filter( 'woocommerce_analytics_report_menu_items', array( $this, 'add_analytics_report_menu_item' ) );
+	}
+
+	/**
+	 * Add 'Products Example' under WC Analytics.
+	 *
+	 * @param array $reports Tabs
+	 */
+	public function add_analytics_report_menu_item( $reports ) {
+		$products_example_report = array(
+			'id'     => 'woocommerce-analytics-products-example',
+			'title'  => __( 'Products Example', 'woocommerce-analytics-products-example' ),
+			'parent' => 'woocommerce-analytics',
+			'path'   => '/analytics/products-example',
+		);
+
+		// Ensure "Products Example" is located before "Settings".
+		$settings_key = array_search( 'woocommerce-analytics-settings', array_column( $reports, 'id' ), true );
+		array_splice( $reports, $settings_key, 0, array( $products_example_report ) );
+
+		return $reports;
 	}
 
 	/**
