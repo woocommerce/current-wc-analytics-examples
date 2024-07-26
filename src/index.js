@@ -11,6 +11,7 @@ import { Fragment } from '@wordpress/element';
  * Internal dependencies
  */
 import './index.scss';
+import './analytics';
 
 const MyExamplePage = () => (
 	<Fragment>
