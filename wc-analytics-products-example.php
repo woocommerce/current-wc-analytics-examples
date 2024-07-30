@@ -22,6 +22,7 @@ if ( ! defined( 'MAIN_PLUGIN_FILE' ) ) {
 require_once plugin_dir_path( __FILE__ ) . '/vendor/autoload_packages.php';
 
 use WcAnalyticsProductsExample\Admin\Setup;
+use WcAnalyticsProductsExample\Admin\Analytics\Rest_API;
 
 // phpcs:disable WordPress.Files.FileName
 
@@ -65,6 +66,8 @@ if ( ! class_exists( 'wc_analytics_products_example' ) ) :
 		 * Constructor.
 		 */
 		public function __construct() {
+			new Rest_API();
+
 			if ( is_admin() ) {
 				new Setup();
 			}
