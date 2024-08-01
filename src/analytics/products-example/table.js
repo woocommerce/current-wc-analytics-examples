@@ -54,6 +54,7 @@ export default function ProductsExampleTable ( { endpoint, query } ) {
 				title={ __( 'Products Example', 'woocommerce' ) }
 				endpoint={ endpoint }
 				query={ query }
+				filters={ [] }
 				getHeadersContent={ getHeadersContent }
 				getRowsContent={ getRowsContent }
 			/>

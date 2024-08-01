@@ -2,6 +2,7 @@
  * External dependencies
  */
 import { __ } from '@wordpress/i18n';
+import { ReportFilters } from '@woocommerce/components';
 
 /**
  * Internal dependencies
@@ -26,16 +27,23 @@ const getSelectedChart = ( query, charts ) =>
 export default function ProductsExample( { query, path } ) {
 	return (
 		<>
+			<ReportFilters
+				query={ query }
+				path={ path }
+				filters={ [] }
+			/>
 			<ComposedReportSummary
 				charts={ charts }
 				endpoint={ ENDPOINT }
 				query={ query }
 				selectedChart={ getSelectedChart( query, charts ) }
+				filters={ [] }
 			/>
 			<ComposedReportChart
 				endpoint={ ENDPOINT }
 				path={ path }
 				query={ query }
+				filters={ [] }
 				selectedChart={ getSelectedChart( query, charts ) }
 				charts={ charts }
 			/>
