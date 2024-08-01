@@ -9,7 +9,7 @@ import { ReportFilters } from '@woocommerce/components';
  */
 import ComposedReportChart from '../components/upstream/woocommerce-admin-analytics/analytics/components/report-chart';
 import ComposedReportSummary from '../components/upstream/woocommerce-admin-analytics/analytics/components/report-summary';
-import { charts } from './config';
+import { filters, charts } from './config';
 import ProductsExampleTable from './table';
 
 const ENDPOINT = 'products-example';
@@ -30,20 +30,20 @@ export default function ProductsExample( { query, path } ) {
 			<ReportFilters
 				query={ query }
 				path={ path }
-				filters={ [] }
+				filters={ filters }
 			/>
 			<ComposedReportSummary
 				charts={ charts }
 				endpoint={ ENDPOINT }
 				query={ query }
 				selectedChart={ getSelectedChart( query, charts ) }
-				filters={ [] }
+				filters={ filters }
 			/>
 			<ComposedReportChart
 				endpoint={ ENDPOINT }
 				path={ path }
 				query={ query }
-				filters={ [] }
+				filters={ filters }
 				selectedChart={ getSelectedChart( query, charts ) }
 				charts={ charts }
 			/>

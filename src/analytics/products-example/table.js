@@ -7,6 +7,7 @@ import { __ } from '@wordpress/i18n';
  * Internal dependencies
  */
 import ComposedReportTable from '../components/upstream/woocommerce-admin-analytics/analytics/components/report-table';
+import { filters } from './config';
 
 const getHeadersContent = () => {
 	return [
@@ -54,7 +55,7 @@ export default function ProductsExampleTable ( { endpoint, query } ) {
 				title={ __( 'Products Example', 'woocommerce' ) }
 				endpoint={ endpoint }
 				query={ query }
-				filters={ [] }
+				filters={ filters }
 				getHeadersContent={ getHeadersContent }
 				getRowsContent={ getRowsContent }
 			/>
